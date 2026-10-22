@@ -1,0 +1,14 @@
+
+{
+  "name": "eb-do-lk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor do site EB DO LK",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
