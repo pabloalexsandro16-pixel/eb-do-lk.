@@ -2,134 +2,260 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101810">
-  <title>EB DO LK | Exército Brasileiro</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101510;
-      color: #f5f5ed;
-    }
-    header {
-      background: #18251a;
-      padding: 20px;
-      border-bottom: 2px solid #c4a34b;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    header h2 { margin: 0; color: #e2c568; }
-    nav { display: flex; gap: 16px; flex-wrap: wrap; }
-    a { color: #e2c568; text-decoration: none; }
-    nav a:hover { color: white; }
-    .hero {
-      text-align: center;
-      padding: 85px 20px;
-      background: linear-gradient(135deg, #1b3220, #101510);
-    }
-    .brasao { font-size: 60px; }
-    .hero h1 { font-size: clamp(32px, 6vw, 55px); margin: 15px 0; }
-    .hero p { color: #c8cec7; line-height: 1.7; }
-    .botao {
-      display: inline-block;
-      background: #c4a34b;
-      color: #11170f;
-      font-weight: bold;
-      padding: 14px 24px;
-      border-radius: 6px;
-      margin: 15px 8px 0;
-    }
-    section { padding: 45px 20px; text-align: center; }
-    section h2 { color: #e2c568; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      max-width: 1000px;
-      margin: 25px auto;
-    }
-    .card {
-      background: #1b241c;
-      padding: 25px;
-      border: 1px solid #354637;
-      border-radius: 10px;
-    }
-    .card h3 { color: #e2c568; }
-    .card p { color: #c8cec7; line-height: 1.6; }
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #18251a;
-      color: #c8cec7;
-      border-top: 1px solid #c4a34b;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101710">
+<title>EB DO LK | Painel Oficial</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d120e;color:#f4f5ed;font-family:Arial,sans-serif}
+header{background:#17251a;border-bottom:2px solid #c9a84c;padding:20px}
+.brand{font-size:23px;font-weight:bold;color:#e5ca70}
+header p{margin:7px 0 0;color:#b9c4b9;font-size:13px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+nav button{background:#243427;color:#ddd;border:1px solid #3b503e;padding:12px 15px;border-radius:7px;cursor:pointer}
+nav button.active,nav button:hover{background:#c9a84c;color:#101510;border-color:#c9a84c}
+main{max-width:1100px;margin:auto;padding:25px 16px;min-height:65vh}
+.page{display:none}
+.page.active{display:block;animation:appear .2s ease}
+@keyframes appear{from{opacity:.5}to{opacity:1}}
+.hero{text-align:center;padding:50px 15px;background:linear-gradient(140deg,#203c27,#101710);border:1px solid #3c533d;border-radius:14px}
+.shield{font-size:55px}
+h1{font-size:clamp(28px,5vw,46px);margin:15px 0;color:#e5ca70}
+h2{color:#e5ca70}
+p{line-height:1.6;color:#c7cec6}
+.btn{display:inline-block;padding:13px 18px;background:#c9a84c;color:#11170f;font-weight:bold;text-decoration:none;border:0;border-radius:7px;cursor:pointer;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+.card{background:#172119;border:1px solid #354a37;padding:20px;border-radius:10px}
+.card h3{color:#e5ca70;margin-top:0}
+.muted{font-size:13px;color:#aab5aa}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+input,select{background:#111a13;color:#f4f5ed;border:1px solid #49604b;border-radius:7px;padding:13px;width:100%;min-width:0}
+.toolbar input{flex:1;min-width:200px}
+.rank{display:flex;align-items:center;gap:12px;background:#172119;border:1px solid #354a37;padding:13px;border-radius:8px}
+.rank-number{min-width:38px;height:38px;border-radius:7px;display:grid;place-items:center;background:#30452f;color:#e5ca70;font-weight:bold;font-size:13px}
+.rank-name{font-weight:bold;overflow-wrap:anywhere}
+.rank-top{border-color:#c9a84c;background:#252718}
+.rank-top .rank-number{background:#c9a84c;color:#111}
+.notice{padding:14px;background:#282516;border:1px solid #82713c;border-radius:8px;color:#f0dda0}
+label{display:block;margin:16px 0 8px}
+footer{text-align:center;background:#17251a;border-top:1px solid #c9a84c;padding:22px}
+.small{font-size:12px;color:#aab5aa}
+</style>
 </head>
 <body>
-  <header>
-    <h2>🇧🇷 EB DO LK</h2>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#patentes">Patentes</a>
-      <a href="#grupo">Grupo Roblox</a>
-      <a href="#painel">Painel</a>
-    </nav>
-  </header>
+<header>
+  <div class="brand">🇧🇷 EB DO LK</div>
+  <p>EXÉRCITO BRASILEIRO • PORTAL OFICIAL</p>
+  <nav aria-label="Navegação principal">
+    <button class="active" data-page="inicio">⌂ Início</button>
+    <button data-page="patentes">🎖️ Patentes</button>
+    <button data-page="grupo">🎮 Grupo Roblox</button>
+    <button data-page="painel">🔐 Promoções</button>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="brasao">🛡️</div>
+<main>
+  <section class="page active" id="inicio">
+    <div class="hero">
+      <div class="shield">🛡️</div>
       <h1>EXÉRCITO BRASILEIRO</h1>
-      <p>EB DO LK — Disciplina, honra e compromisso.</p>
-      <p>Faça parte da nossa comunidade militar no Roblox!</p>
-      <a class="botao" href="#grupo">CONHEÇA NOSSO GRUPO</a>
-    </section>
+      <p>EB DO LK</p>
+      <p>Honra • Disciplina • Respeito</p>
+      <button class="btn" data-goto="patentes">CONSULTAR PATENTES</button>
+      <br>
+      <button class="btn" data-goto="grupo">ENTRAR NO GRUPO</button>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>🎖️ Hierarquia</h3>
+        <p>Consulte os cargos e a organização do nosso Exército.</p>
+        <button class="btn" data-goto="patentes">Ver patentes</button>
+      </article>
+      <article class="card">
+        <h3>🎮 Roblox</h3>
+        <p>Acesse a página do grupo EB DO LK.</p>
+        <button class="btn" data-goto="grupo">Abrir grupo</button>
+      </article>
+      <article class="card">
+        <h3>🔐 Administração</h3>
+        <p>Acesse a área de preparação de promoções.</p>
+        <button class="btn" data-goto="painel">Abrir painel</button>
+      </article>
+    </div>
+  </section>
 
-    <section id="patentes">
-      <h2>🎖️ HIERARQUIA MILITAR</h2>
-      <p>Conheça a estrutura de patentes do EB DO LK.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Praças</h3>
-          <p>Área destinada aos membros em formação e às funções iniciais.</p>
-        </article>
-        <article class="card">
-          <h3>Oficiais</h3>
-          <p>Responsáveis pela liderança, organização e treinamento.</p>
-        </article>
-        <article class="card">
-          <h3>Alto Comando</h3>
-          <p>Responsável pela administração e pelas decisões da instituição.</p>
-        </article>
-      </div>
-    </section>
+  <section class="page" id="patentes">
+    <h2>🎖️ Hierarquia de Patentes</h2>
+    <p>Lista de cargos do EB DO LK, na ordem informada pela administração.</p>
+    <div class="toolbar">
+      <input id="busca" type="search" placeholder="Pesquisar patente ou sigla..." aria-label="Pesquisar patentes">
+    </div>
+    <p class="muted" id="contador"></p>
+    <div id="lista" class="grid"></div>
+  </section>
 
-    <section id="grupo">
-      <h2>🎮 NOSSO GRUPO NO ROBLOX</h2>
-      <p>Entre no grupo oficial e conheça nossa comunidade.</p>
-      <a class="botao"
-         href="https://www.roblox.com/groups/1029517697"
-         target="_blank" rel="noopener noreferrer">
-        ACESSAR GRUPO ROBLOX
-      </a>
-    </section>
+  <section class="page" id="grupo">
+    <div class="hero">
+      <div class="shield">🎮</div>
+      <h2>Grupo Oficial do Roblox</h2>
+      <p>Visite o grupo do EB DO LK no Roblox.</p>
+      <a class="btn" href="https://www.roblox.com/groups/1029517697" target="_blank" rel="noopener noreferrer">ACESSAR GRUPO ROBLOX ↗</a>
+      <p class="small">Grupo configurado com o ID 1029517697.</p>
+    </div>
+  </section>
 
-    <section id="painel">
-      <h2>🔐 PAINEL ADMINISTRATIVO</h2>
-      <p>Área reservada à administração de patentes e promoções.</p>
-      <p>O painel será ativado após a configuração segura do servidor.</p>
-    </section>
-  </main>
+  <section class="page" id="painel">
+    <h2>🔐 Painel de Promoções</h2>
+    <p>Prepare os dados da promoção de um membro.</p>
+    <div class="notice">
+      Este formulário ainda não executa promoções no Roblox. Para ativá-las, será necessário configurar um servidor seguro, autenticação administrativa e a API oficial do Roblox.
+    </div>
+    <form id="promocao">
+      <label for="usuario">Nome de usuário ou ID do membro Roblox</label>
+      <input id="usuario" name="usuario" placeholder="Ex.: nome ou ID do membro" required>
+      <label for="patenteAtual">Patente atual</label>
+      <select id="patenteAtual" required></select>
+      <label for="novaPatente">Patente desejada</label>
+      <select id="novaPatente" required></select>
+      <label for="motivo">Motivo da promoção</label>
+      <input id="motivo" name="motivo" placeholder="Ex.: desempenho e dedicação" required>
+      <button class="btn" type="submit">PREPARAR SOLICITAÇÃO</button>
+    </form>
+    <div id="resultado" class="card" hidden aria-live="polite"></div>
+    <p class="small">Não insira senhas ou cookies da sua conta Roblox neste formulário.</p>
+  </section>
+</main>
 
-  <footer>
-    <p>🇧🇷 EB DO LK — Exército Brasileiro no Roblox</p>
-    <p>Honra • Disciplina • Respeito</p>
-  </footer>
+<footer>
+  <div class="brand">🇧🇷 EB DO LK</div>
+  <p>Honra • Disciplina • Respeito</p>
+  <p class="small">Portal da comunidade EB DO LK.</p>
+</footer>
+
+<script>
+const patentes = [
+  "DN] DONO DO JOGO",
+  "[F] Fundador",
+  "[PREX] Presidente do Exército",
+  "[Sub-C] Sub Criador",
+  "[F] Fundador",
+  "[SF] Subfundador",
+  "[ROE] Responsável Oficial do Exército",
+  "[ES] Estado Superior",
+  "[R-MPAT] Responsável pelo Monitoramento de Patente",
+  "[M-PAT] Monitor de Patente",
+  "[AC] Alto Comando",
+  "[DG-MR] Direção Geral do Exército",
+  "[SUB-DG-MR] Sub Direção Geral do Exército",
+  "[RESP] Responsável Geral",
+  "[SUB-RESP] Sub Responsável Geral",
+  "[Adm-II] Administrador II",
+  "[Adm-I] Administrador I",
+  "[HP] Auxiliar",
+  "[SUBH] Sub-Auxiliar",
+  "[CMT] Comandante",
+  "[Gen-ex] General de Exército",
+  "[Gen-Div] General de Divisão",
+  "[Gen-bda] General de Brigada",
+  "[Cel] Coronel",
+  "[Ten-Cel] Tenente-Coronel",
+  "[Maj] Major",
+  "[Cap] Capitão",
+  "[1º Tenente] Primeiro-Tenente",
+  "[2º Ten] Segundo-Tenente",
+  "[Asp] Aspirante-a-Oficial",
+  "[Sb-Ten] Sub Tenente",
+  "[1º Sgt] Primeiro-Sargento",
+  "[2º Sargento] Segundo-Sargento",
+  "[3º Sgt] Terceiro-Sargento",
+  "[Rec] Recruta"
+];
+
+const paginas = document.querySelectorAll(".page");
+const botoes = document.querySelectorAll("nav button");
+
+function abrirPagina(id) {
+  paginas.forEach(p => p.classList.toggle("active", p.id === id));
+  botoes.forEach(b => b.classList.toggle("active", b.dataset.page === id));
+  document.getElementById("busca").value =
+    document.getElementById("busca").value;
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+botoes.forEach(b => b.addEventListener("click", () => abrirPagina(b.dataset.page)));
+document.querySelectorAll("[data-goto]").forEach(b =>
+  b.addEventListener("click", () => abrirPagina(b.dataset.goto))
+);
+
+function montarPatentes(filtro = "") {
+  const lista = document.getElementById("lista");
+  lista.replaceChildren();
+  const termo = filtro.toLocaleLowerCase("pt-BR");
+  let total = 0;
+
+  patentes.forEach((nome, i) => {
+    if (!nome.toLocaleLowerCase("pt-BR").includes(termo)) return;
+    total++;
+    const item = document.createElement("article");
+    item.className = "rank" + (i === 0 ? " rank-top" : "");
+
+    const numero = document.createElement("div");
+    numero.className = "rank-number";
+    numero.textContent = i === 0 ? "DN" : String(i);
+
+    const texto = document.createElement("div");
+    texto.className = "rank-name";
+    texto.textContent = nome;
+
+    item.append(numero, texto);
+    lista.append(item);
+  });
+
+  document.getElementById("contador").textContent =
+    total + " de " + patentes.length + " cargos exibidos.";
+}
+
+montarPatentes();
+document.getElementById("busca").addEventListener("input", e =>
+  montarPatentes(e.target.value)
+);
+
+function preencherSelecao(id) {
+  const select = document.getElementById(id);
+  patentes.forEach((nome, i) => {
+    const option = document.createElement("option");
+    option.value = String(i);
+    option.textContent = nome;
+    select.append(option);
+  });
+}
+preencherSelecao("patenteAtual");
+preencherSelecao("novaPatente");
+
+document.getElementById("promocao").addEventListener("submit", e => {
+  e.preventDefault();
+  const usuario = document.getElementById("usuario").value.trim();
+  const atual = patentes[Number(document.getElementById("patenteAtual").value)];
+  const nova = patentes[Number(document.getElementById("novaPatente").value)];
+  const motivo = document.getElementById("motivo").value.trim();
+  const resultado = document.getElementById("resultado");
+
+  resultado.replaceChildren();
+  const titulo = document.createElement("h3");
+  titulo.textContent = "Solicitação preparada";
+  const detalhes = document.createElement("p");
+  detalhes.textContent =
+    "Membro: " + usuario +
+    " | Patente atual: " + atual +
+    " | Patente desejada: " + nova +
+    " | Motivo: " + motivo;
+  const aviso = document.createElement("p");
+  aviso.textContent =
+    "Nenhuma alteração foi feita no Roblox. O servidor administrativo ainda precisa ser conectado.";
+  resultado.append(titulo, detalhes, aviso);
+  resultado.hidden = false;
+});
+</script>
 </body>
 </html>
