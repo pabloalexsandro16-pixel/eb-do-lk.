@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101810">
+  <title>EB DO LK | Exército Brasileiro</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101510;
+      color: #f5f5ed;
+    }
+    header {
+      background: #18251a;
+      padding: 20px;
+      border-bottom: 2px solid #c4a34b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    header h2 { margin: 0; color: #e2c568; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    a { color: #e2c568; text-decoration: none; }
+    nav a:hover { color: white; }
+    .hero {
+      text-align: center;
+      padding: 85px 20px;
+      background: linear-gradient(135deg, #1b3220, #101510);
+    }
+    .brasao { font-size: 60px; }
+    .hero h1 { font-size: clamp(32px, 6vw, 55px); margin: 15px 0; }
+    .hero p { color: #c8cec7; line-height: 1.7; }
+    .botao {
+      display: inline-block;
+      background: #c4a34b;
+      color: #11170f;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      margin: 15px 8px 0;
+    }
+    section { padding: 45px 20px; text-align: center; }
+    section h2 { color: #e2c568; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 25px auto;
+    }
+    .card {
+      background: #1b241c;
+      padding: 25px;
+      border: 1px solid #354637;
+      border-radius: 10px;
+    }
+    .card h3 { color: #e2c568; }
+    .card p { color: #c8cec7; line-height: 1.6; }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #18251a;
+      color: #c8cec7;
+      border-top: 1px solid #c4a34b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>🇧🇷 EB DO LK</h2>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#patentes">Patentes</a>
+      <a href="#grupo">Grupo Roblox</a>
+      <a href="#painel">Painel</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="brasao">🛡️</div>
+      <h1>EXÉRCITO BRASILEIRO</h1>
+      <p>EB DO LK — Disciplina, honra e compromisso.</p>
+      <p>Faça parte da nossa comunidade militar no Roblox!</p>
+      <a class="botao" href="#grupo">CONHEÇA NOSSO GRUPO</a>
+    </section>
+
+    <section id="patentes">
+      <h2>🎖️ HIERARQUIA MILITAR</h2>
+      <p>Conheça a estrutura de patentes do EB DO LK.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Praças</h3>
+          <p>Área destinada aos membros em formação e às funções iniciais.</p>
+        </article>
+        <article class="card">
+          <h3>Oficiais</h3>
+          <p>Responsáveis pela liderança, organização e treinamento.</p>
+        </article>
+        <article class="card">
+          <h3>Alto Comando</h3>
+          <p>Responsável pela administração e pelas decisões da instituição.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="grupo">
+      <h2>🎮 NOSSO GRUPO NO ROBLOX</h2>
+      <p>Entre no grupo oficial e conheça nossa comunidade.</p>
+      <a class="botao"
+         href="https://www.roblox.com/groups/1029517697"
+         target="_blank" rel="noopener noreferrer">
+        ACESSAR GRUPO ROBLOX
+      </a>
+    </section>
+
+    <section id="painel">
+      <h2>🔐 PAINEL ADMINISTRATIVO</h2>
+      <p>Área reservada à administração de patentes e promoções.</p>
+      <p>O painel será ativado após a configuração segura do servidor.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🇧🇷 EB DO LK — Exército Brasileiro no Roblox</p>
+    <p>Honra • Disciplina • Respeito</p>
+  </footer>
+</body>
+</html>
